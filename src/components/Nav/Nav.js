@@ -1,7 +1,7 @@
 import React from "react"
 import logo from "../.././assets/logo-small.png"
 import "./Nav.css"
-const Nav = () => {
+const Nav = ({openModal, cartL}) => {
 	return (
 		<div>
 			<header>
@@ -12,13 +12,13 @@ const Nav = () => {
 				</ul>
 				<ul>
 					<li>
-						<a href="/home">Home</a>
+						<button>Home</button>
 					</li>
 					<li>
-						<a href="/home">Product</a>
+						<button onClick={openModal}>Cart <sup>{cartL}</sup> </button>
 					</li>
 					<li>
-						<a href="/home">About</a>
+						<button>About</button>
 					</li>
 				</ul>
 			</header>

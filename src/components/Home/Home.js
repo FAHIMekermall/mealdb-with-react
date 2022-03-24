@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Meal from "../meal/Meal"
 import "./Home.css"
 
-const Home = () => {
+const Home = ({addToCart}) => {
 	const [meals, setMeals] = useState([])
 	useEffect(() => {
 		fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=a")
@@ -14,7 +14,7 @@ const Home = () => {
 	},[meals])
 	return (
 		<div className="meals">
-			{meals.map(meal=> <Meal key={meal.idMeal} meal={meal}/>)}
+			{meals.map(meal=> <Meal addToCart={addToCart} key={meal.idMeal} meal={meal}/>)}
 		</div>
 	)
 }
